@@ -1,10 +1,13 @@
+import { useState } from "react";
 import "./Country.css";
-const Country = ({ country }) => {
-  console.log(country);
+const Country = ({ country, handleCountryList }) => {
   const { name, flags, area, capital, maps } = country;
-  console.log(maps.googleMaps);
+  const [isVisited, setVisitid] = useState(false);
+  const handleVisited = () => {
+    setVisitid(!isVisited);
+  };
   return (
-    <div className={"country-css"}>
+    <div className={isVisited ? "visit" : "country-css"}>
       <img src={flags.png} alt="" />
       <h3>Country Name: {name.common}</h3>
       <p>Area: {area}</p>
@@ -15,6 +18,14 @@ const Country = ({ country }) => {
           Go to map
         </a>
       </p>
+      <button
+        onClick={() => {
+          handleVisited();
+          handleCountryList(country);
+        }}
+      >
+        Visited
+      </button>
     </div>
   );
 };

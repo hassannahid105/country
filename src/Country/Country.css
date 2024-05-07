@@ -1,7 +1,18 @@
 .country-css {
   border: 2px solid red;
   background-color: aliceblue;
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
   margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.visit {
+  border: 2px solid green;
+  background-color: black;
+  padding: 20px;
+  margin: 10px;
+  margin-bottom: 20px;
+  color: white;
+  border-radius: 10px;
 }
